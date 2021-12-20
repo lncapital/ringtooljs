@@ -1,0 +1,13 @@
+#Pubkeys or ChannelIDs in normal or standard format from all ROF Participants
+02bc320249b608a53a76cf3cbd448fdd3ab8f3766f96e8649c2edc26cf03bf8277,@LNClash
+02b2d5b1e3167287ea4d1835e5272d99f7beb8c283f7a27d15198270630d3eb23a,@FollowTheWhiteRabbit
+034997db2fa4563a86b0a06103944ad8eb5c2ff013e58afaa90f3de8a7bfd2b6d6,@Mongo
+02826f50035eca93c7ebfbad4f9621a8eb201f4e28f994db5b6b5af32a65efb6b9,@ziggie
+0258adfbecc79c65f5d32ff0d7e9da6dc5e765140a8e8de7ed5ca0c6a4f6d37fb3,@Spast
+#02ba62f2cf65a10b9867477f266e67ef7e5f34b8b8b128916497bf54e0603a4693,@Anathos
+
+
+
+
+
+
