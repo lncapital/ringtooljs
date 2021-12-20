@@ -1,0 +1,8 @@
+{
+    "ignitionParameters": {
+      "max-fee-sats": 100,
+      "amount-rebalance": "Channelcapacity/2",
+      "ln-dir": "~/.lnd"
+    }
+  }
+  

@@ -1,0 +1,30 @@
+{
+    "name": "ziggniter",
+    "version": "1.0.0",
+    "description": "Tool for the Lightning Network and Node Management",
+    "license": "MIT",
+    "main": "index.js",
+    "author": {
+        "name": "Ziggie",
+        "email": "ziggie1984@protonmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "bin": {
+        "ringtool": "ringtool"
+    },
+    "dependencies": {
+        "asyncjs-util": "^1.2.7",
+        "caporal": "^1.4.0",
+        "import-lazy": "^4.0.0",
+        "ini": "^2.0.0",
+        "ln-service": "^52.1.0",
+        "path": "^0.12.7",
+        "posix": "^4.2.0",
+        "table": "6.7.5",
+        "update-notifier": "^5.1.0",
+        "yargs": "^17.3.0"
+    }
+}
