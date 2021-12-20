@@ -10,10 +10,13 @@
     },
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/lncapital/ringtool.git"
     },
     "bin": {
         "ringtool": "ringtool"
+    },
+    "bugs": {
+        "url": "https://github.com/lncapital/ringtool/issues"
     },
     "dependencies": {
         "asyncjs-util": "^1.2.7",
@@ -26,5 +29,12 @@
         "table": "6.7.5",
         "update-notifier": "^5.1.0",
         "yargs": "^17.3.0"
-    }
+    },
+    "keywords": [
+        "lightning",
+        "lightning-network",
+        "lnd",
+        "rebalance",
+        "RingOfFire"
+    ],
 }
