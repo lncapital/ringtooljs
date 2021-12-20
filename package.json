@@ -1,5 +1,5 @@
 {
-    "name": "ziggniter",
+    "name": "ringtool",
     "version": "1.0.0",
     "description": "Tool for the Lightning Network and Node Management",
     "license": "MIT",
@@ -13,7 +13,7 @@
         "url": "https://github.com/lncapital/ringtool.git"
     },
     "bin": {
-        "ringtool": "ringtool"
+        "ringtool": "./ringtool"
     },
     "bugs": {
         "url": "https://github.com/lncapital/ringtool/issues"

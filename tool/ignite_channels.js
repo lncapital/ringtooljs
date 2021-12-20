@@ -342,9 +342,9 @@ module.exports = (args, cbk) => {
 
 
           } else {
-            args.logger.info("Ignition in 1 2 3 🚀")
+            args.logger.info('Ignition in 1 2 3 🚀')
             const result = await lnService.payViaRoutes({ lnd: args.lnd, id: id_payment, routes: [route] });
-            args.logger.info("Success ✅: Payment with the Details:")
+            args.logger.info('Success ✅: Payment with the Details:')
             
             return (null, {Route: result.hops, Amount: result.tokens,FeePaid: result.fee})
 
@@ -354,7 +354,7 @@ module.exports = (args, cbk) => {
         }
         catch (err) {
           if (!!err.find(o => o === 'UnknownPaymentHash')) {
-            args.logger.info("Reblance would be successful ✅")
+            args.logger.info('Reblance would be successful ✅')
             return (null, route)
           } else {
             flattenobject = flatten(err)
