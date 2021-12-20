@@ -337,16 +337,17 @@ module.exports = (args, cbk) => {
 
         try {
           if (args.dryrun) {
+
             const result = (await lnService.payViaRoutes({ lnd: args.lnd, routes: [route] }));
             
-            return (null, {Route: result.hops, Amount: result.tokens,FeePaid: result.fee})
+            return (null, [{Route: route.hops}, bold(`Reblance Amount in Satoshis: ${route.tokens}`), bold(`Fees to pay for the Rebalance in Satoshis: ${route.fee}`)])
 
           } else {
             args.logger.info('Ignition in 1 2 3 🚀')
             const result = await lnService.payViaRoutes({ lnd: args.lnd, id: id_payment, routes: [route] });
             args.logger.info('Success ✅: Payment with the Details:')
             
-            return (null, {Route: result.hops, Amount: result.tokens,FeePaid: result.fee})
+            return (null, [{Route: route.hops}, bold(`Reblance Amount in Satoshis: ${route.tokens}`), bold(`Fees to pay for the Rebalance in Satoshis: ${route.fee}`)])
 
           }
 
@@ -355,7 +356,8 @@ module.exports = (args, cbk) => {
         catch (err) {
           if (!!err.find(o => o === 'UnknownPaymentHash')) {
             args.logger.info('Reblance would be successful ✅')
-            return (null, {Route: route.hops, Amount: route.tokens,Fee: route.fee})
+
+            return (null, [{Route: route.hops}, bold(`Reblance Amount in Satoshis: ${route.tokens}`), bold(`Fees to pay for the Rebalance in Satoshis: ${route.fee}`)])
           } else {
             flattenobject = flatten(err)
             const problemChannel = finalChannels.find(n => n.chanid === flattenobject.channel)
