@@ -338,8 +338,8 @@ module.exports = (args, cbk) => {
         try {
           if (args.dryrun) {
             const result = (await lnService.payViaRoutes({ lnd: args.lnd, routes: [route] }));
-            return (null, result)
-
+            
+            return (null, {Route: result.hops, Amount: result.tokens,FeePaid: result.fee})
 
           } else {
             args.logger.info('Ignition in 1 2 3 🚀')
@@ -355,7 +355,7 @@ module.exports = (args, cbk) => {
         catch (err) {
           if (!!err.find(o => o === 'UnknownPaymentHash')) {
             args.logger.info('Reblance would be successful ✅')
-            return (null, route)
+            return (null, {Route: route.hops, Amount: route.tokens,Fee: route.fee})
           } else {
             flattenobject = flatten(err)
             const problemChannel = finalChannels.find(n => n.chanid === flattenobject.channel)

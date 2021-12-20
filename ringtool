@@ -41,7 +41,7 @@ prog
   .option("--amount-rebalance <amount-reblance>", "amount to rebalance", prog.STRING, ignitionParametersCamelCase.amountRebalance )
   .option("-z, --zero-fees", "Force Zero fees")
   .option("-l, --ln-dir <ln-dir>", "Path to lnd directory", prog.STRING, ignitionParametersCamelCase.lnDir)
-  .option('--dry-run <dryrun>', "Dummy Payment is sent to simulate the ROF Igntion")
+  .option('--dry-run', "Dummy Payment is sent to simulate the ROF Igntion")
   .option('--pubkey-file <pubkey-file>', "When no pubkeys are provide specify a pubkey-file Path")
   .action((args, options, logger)  => {
   

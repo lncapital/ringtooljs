@@ -6,7 +6,7 @@ This CMD Tool facilitates the Reblance of big SWAPS
 
 * Gives you an overview wether a Channel has alreasdy been opended before reblancing
 * Possibility to set fees to zero, circumventing the gossip protocol (which might be slow for less connected nodes)
-* Inserts a default (fake) policy in case no policy for the channel has be propagated.
+* Inserts a default (fake) policy in case no policy for the channel has been propagated.
 
 
 
@@ -18,7 +18,7 @@ Tested on Raspiblitz and Umbrel!
 * Change in this directory `cd ringtool`
 * Check whether nodejs is installed with `node -v` (if not install: `sudo apt install nodejs npm`)
 * Install dependencies with `npm install`
-* To make the Ringtool available type `sudo npm install -g`
+* To make the Ringtool globally available type `sudo npm install -g`
 * Check whether everything is working with  `ringtool -h`
 
 ```
@@ -48,7 +48,7 @@ ringtool -h
 
 ## Usage
 
-This tool is based on Balance of Sathosi. Every Command has ARGUMENTS and OPTIONS. In the Help Menu it is always shown whether which commands are mandatory the some default values.
+This tool is based on Balance of Sathosi. Every Command has ARGUMENTS and OPTIONS. In the Help Menu it is always shown whether each commands are mandatory the some default values.
 
 To see the help of commands type `ringtool ignite -h`
 
@@ -86,7 +86,7 @@ For example:
 To reblance a big SWAP, just put the files in a txt-File:
 
 ```shell
-cat bos_channels.txt
+cat  pubkeys.txt 
 
        │ File: pubkeys.txt 
 Line   | pubkey,[Telegram Handle]
@@ -101,11 +101,25 @@ Line   | pubkey,[Telegram Handle]
 
 ```
 
-You can either provide the file with the option --pubkey-file or just to it in the following way:
+You can either provide the file with the option --pubkey-file or just do it in the following way:
 
 ```shell
-ringtool ignite $(cat pubkeys.txt) --dryrun --zero-fees
-```
+ringtool status $(cat pubkeys.txt)
 
+
+┌───────────────────────┬─────────────────────────┬───────────────┬────────────────────────────────────────────────────────────────────┬────────────────┬────────────────┐
+│ Telegram Name         │ alias                   │ ChanID        │ Public Key to open Channel with                                    │ Basefee [msat] │ Feerate [ppm]) │
+├───────────────────────┼─────────────────────────┼───────────────┼────────────────────────────────────────────────────────────────────┼────────────────┼────────────────┤
+│ @ziggie               │ ✅ hippiesabotage       │ 709514x183x2  │ 0258adfbecc79c65f5d32ff0d7e9da6dc5e765140a8e8de7ed5ca0c6a4f6d37fb3 │ 0              │ 150            │
+├───────────────────────┼─────────────────────────┼───────────────┼────────────────────────────────────────────────────────────────────┼────────────────┼────────────────┤
+│ @Spast                │ ✅ 0258adfbecc79c65f5d3 │ 709567x2332x1 │ 02bc320249b608a53a76cf3cbd448fdd3ab8f3766f96e8649c2edc26cf03bf8277 │ 0              │ -              │
+├───────────────────────┼─────────────────────────┼───────────────┼────────────────────────────────────────────────────────────────────┼────────────────┼────────────────┤
+│ @LNClash              │ ✅ LNClash              │ 709519x1674x0 │ 02b2d5b1e3167287ea4d1835e5272d99f7beb8c283f7a27d15198270630d3eb23a │ 0              │ 40             │
+├───────────────────────┼─────────────────────────┼───────────────┼────────────────────────────────────────────────────────────────────┼────────────────┼────────────────┤
+│ @FollowTheWhiteRabbit │ ✅ FollowTheWhiteRabbit │ 709543x1609x0 │ 034997db2fa4563a86b0a06103944ad8eb5c2ff013e58afaa90f3de8a7bfd2b6d6 │ 0              │ 100            │
+├───────────────────────┼─────────────────────────┼───────────────┼────────────────────────────────────────────────────────────────────┼────────────────┼────────────────┤
+│ @Mongo                │ ✅ 034997db2fa4563a86b0 │ 709522x1475x1 │ 02826f50035eca93c7ebfbad4f9621a8eb201f4e28f994db5b6b5af32a65efb6b9 │ 1000           │ 10             │
+└───────────────────────┴─────────────────────────┴───────────────┴────────────────────────────────────────────────────────────────────┴────────────────┴────────────────┘
+```
 
 ## Commands will be added and the tool further enhanced
