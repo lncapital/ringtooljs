@@ -15,20 +15,20 @@ This CMD Tool facilitates the Reblance of big SWAPS
 Tested on Raspiblitz and Umbrel!
 
 * Fetch this repo with `git clone url`
-* Change in this directory `cd ringtool`
+* Change in this directory `cd ringtooljs`
 * Check whether nodejs is installed with `node -v` (if not install: `sudo apt install nodejs npm`)
 * Install dependencies with `npm install`
 * To make the Ringtool globally available type `sudo npm install -g`
-* Check whether everything is working with  `ringtool -h`
+* Check whether everything is working with  `ringtooljs -h`
 
 ```
-ringtool -h
+ringtooljs -h
 
-   ringtool 1.0.0 
+   ringtooljs 1.0.0 
 
    USAGE
 
-     ringtool <command> [options]
+     ringtooljs <command> [options]
 
    COMMANDS
 
@@ -50,7 +50,7 @@ ringtool -h
 
 This tool is based on Balance of Sathosi. Every Command has ARGUMENTS and OPTIONS. In the Help Menu it is always shown whether each commands are mandatory the some default values.
 
-To see the help of commands type `ringtool ignite -h`
+To see the help of commands type `ringtooljs ignite -h`
 
 
 For example:
@@ -58,7 +58,7 @@ For example:
 ```
  USAGE
 
-     ringtool ignite [pubkeys...]
+     ringtooljs ignite [pubkeys...]
 
    ARGUMENTS
 
@@ -104,7 +104,7 @@ Line   | pubkey,[Telegram Handle]
 You can either provide the file with the option --pubkey-file or just do it in the following way:
 
 ```shell
-ringtool status $(cat pubkeys.txt)
+ringtooljs status $(cat pubkeys.txt)
 
 
 ┌───────────────────────┬─────────────────────────┬───────────────┬────────────────────────────────────────────────────────────────────┬────────────────┬────────────────┐
