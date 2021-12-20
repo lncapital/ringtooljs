@@ -36,5 +36,6 @@
         "lnd",
         "rebalance",
         "RingOfFire"
-    ]
+    ],
+    "test": "echo \"No test specified\""
 }
