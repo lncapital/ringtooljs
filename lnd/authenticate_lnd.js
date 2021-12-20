@@ -1,7 +1,7 @@
 const asyncAuto = require('async/auto');
 const { authenticatedLndGrpc } = require('ln-service');
 const { returnResult } = require('asyncjs-util');
-
+//Copyright (c) 2021 Balance of Satoshi 
 const lndCredentials = require('./lnd_credentials');
 
 /** Authenticated LND

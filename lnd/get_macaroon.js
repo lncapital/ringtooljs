@@ -1,3 +1,4 @@
+//Copyright (c) 2021 Balance of Satoshi 
 const { join } = require('path');
 
 const asyncAuto = require('async/auto');

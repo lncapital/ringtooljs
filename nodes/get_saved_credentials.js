@@ -1,3 +1,4 @@
+//Copyright (c) 2021 Balance of Satoshi 
 const {homedir} = require('os');
 const {join} = require('path');
 

@@ -1,3 +1,4 @@
+//Copyright (c) 2021 Balance of Satoshi 
 const asyncAuto = require('async/auto');
 const {encode} = require('cbor');
 const {grantAccess} = require('ln-service');

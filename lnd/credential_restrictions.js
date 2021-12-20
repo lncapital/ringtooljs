@@ -1,3 +1,4 @@
+//Copyright (c) 2021 Balance of Satoshi 
 const {noSpendPerms,permissionEntities} = require('./constants');
 
 
