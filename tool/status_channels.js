@@ -233,7 +233,7 @@ module.exports = (args, cbk) => {
               const feeRate = channel.fee_rate
               const pubkey = channel.to_pubkey
               let alias = { display: 'Missing Channel' }
-              if (!!channel.alias) {
+              if (!!channel.is_available) {
                 alias = displayStatus({
                   alias: channel.alias,
                   is_inbound_disabled: channel.is_disabled,
