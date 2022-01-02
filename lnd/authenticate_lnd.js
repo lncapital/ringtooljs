@@ -28,9 +28,7 @@ module.exports = ({ logger, node, lnDir }, cbk) => {
       // Lnd
       lnd: ['credentials', ({ credentials }, cbk) => {
 
-        console.log(credentials.socket)
-        console.log()
-
+        
         return cbk(null, authenticatedLndGrpc({
           cert: credentials.cert,
           macaroon: credentials.macaroon,

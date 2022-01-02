@@ -48,7 +48,7 @@ module.exports = args => {
     const left = !!args.is_disconnected ? disconnectedEmoji : String();
     const pendingLiquidity = !!args.is_pending ? pendingEmoji : String();
     const privatePeer = !!args.is_private ? privateEmoji : String();
-    const regularAlias = !!args.alias ? args.alias.replace(isEmoji, String()).trim() : String("No Alias Available");
+    const regularAlias = args.alias.replace(isEmoji, String()).trim();
     const smallMaxHtlc = !!args.is_small_max_htlc ? smallHtlc : String();
     const thawing = !!args.is_thawing ? thawingEmoji : String();
 
