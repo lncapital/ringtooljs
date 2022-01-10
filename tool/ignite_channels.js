@@ -190,8 +190,6 @@ module.exports = (args, cbk) => {
         catch (error) { args.logger.error(error) }
 
 
-      
-
         return {
           nodePublicKey: nodePublicKey || undefined,
           channels: channelsROF || undefined,
@@ -317,6 +315,13 @@ module.exports = (args, cbk) => {
 
         var { route } = await routeFromChannels({ channels: channelsForRouting, destination: getchannels.nodePublicKey, cltv_delta: 200, height: height, messages: [], mtokens: imtokens, payment: payment, total_mtokens: imtokens });
 
+        if(args.verbose){
+          console.log()
+          args.logger.info("Route Before Passing it to LND:")
+          args.logger.info(route)
+          console.log()
+        }
+
         if (route.fee > args.maxFeeSats) {
 
           const answer = await inquirer.prompt([
@@ -337,7 +342,7 @@ module.exports = (args, cbk) => {
 
         try {
           if (args.dryrun) {
-
+            
             const result = (await lnService.payViaRoutes({ lnd: args.lnd, routes: [route] }));
             
             return (null, [{Route: route.hops}, bold(`Reblance Amount in Satoshis: ${route.tokens}`), bold(`Fees to pay for the Rebalance in Satoshis: ${route.fee}`)])

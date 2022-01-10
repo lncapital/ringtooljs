@@ -146,7 +146,7 @@ module.exports = (args, cbk) => {
 
       getchannels: ['getpubkeys', async ({ getpubkeys }) => {
 
-
+       
 
         const reorderd_pubkeys = getpubkeys.reorderd_pubkeys.map(n => n.split(',')[0]);
         const nodePublicKey = getpubkeys.nodePublicKey;
