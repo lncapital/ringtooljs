@@ -20,7 +20,7 @@
     },
     "dependencies": {
         "asyncjs-util": "^1.2.7",
-        "caporal": "^1.4.0",
+        "@alexbosworth/caporal": "1.4.0",
         "import-lazy": "^4.0.0",
         "ini": "^2.0.0",
         "ln-service": "^52.1.0",
@@ -29,6 +29,16 @@
         "table": "6.7.5",
         "update-notifier": "^5.1.0",
         "yargs": "^17.3.0"
+    },
+    "overrides": {
+        "caporal@1.4.0": {
+          "cli-table3@0.5.1": {
+            "colors@1.4.2": "1.4.0"
+          },
+          "prettyjson@1.2.1": {
+            "colors@1.4.2": "1.4.0"
+          }
+        }
     },
     "keywords": [
         "lightning",
