@@ -14,7 +14,7 @@ const { camelCase } = require('lodash');
 const tool = require("./tool")
 const importLazy = require('import-lazy')(require);
 const { version } = importLazy('./package');
-const prog = require('caporal');
+const prog = require('@alexbosworth/caporal');
 
 
 
