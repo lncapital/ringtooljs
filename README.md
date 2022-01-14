@@ -17,7 +17,7 @@ Tested on Raspiblitz and Umbrel!
 ### Fetching it from the npm Repo
 
 * Check that nodejs is at least version `>v16` (if not update with `sudo npm install -g n && sudo n stable`)
-* Install the software globally with `sudo npm install -g ringtoolsjs`
+* Install the software globally with `sudo npm install -g ringtooljs`
 
 ### Build from Source
 
