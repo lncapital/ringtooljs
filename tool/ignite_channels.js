@@ -272,10 +272,14 @@ module.exports = (args, cbk) => {
             for (let i in channel.policies) {
 
               //replace with fake policy
-              if (!channel.policies[i]) {
-
+            
+              if (!channel.policies[i].fee_rate) {
+              
                 channel.policies[i] = default_policy;
                 channel.policies[i].public_key = n.from_pubkey;
+                if(args.verbose){
+                  args.logger.info(`Inserted Fake-Policy for Channel for ${channel}`)
+                }
                 break;
               }
             }
