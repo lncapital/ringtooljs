@@ -39,10 +39,10 @@ prog
   .argument("[pubkeys...]", "provide pubkeys in the ROF order separated by comma or newline, your node does not need to be first")
   .option("--max-fee-sats <max-fee-sats>", "maxfees in sats willing to pay for the rebalance", prog.INTEGER, ignitionParametersCamelCase.maxFeeSats)
   .option("--amount-rebalance <amount-reblance>", "amount to rebalance", prog.STRING, ignitionParametersCamelCase.amountRebalance )
-  .option("-z, --zero-fees", "Force Zero fees")
+  .option("--zero-fees", "Force Zero fees")
   .option("-l, --ln-dir <ln-dir>", "Path to lnd directory", prog.STRING, ignitionParametersCamelCase.lnDir)
   .option('--dry-run', "Dummy Payment is sent to simulate the ROF Igntion")
-  .option('-v, --verbose', "see more output")
+  .option('--verbose', "see more output")
   .option('--pubkey-file <pubkey-file>', "When no pubkeys are provide specify a pubkey-file Path")
   .action((args, options, logger)  => {
   
