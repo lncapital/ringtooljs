@@ -32,13 +32,7 @@ const flatten = function (o) {
   return tempA;
 };
 
-const default_policy =
-{
-  base_fee_mtokens: '0',
-  cltv_delta: 40,
-  fee_rate: 1,
-  base_fee_mtokens: '1000'
-}
+
 
 
 /** Ignite Channels 
@@ -268,17 +262,17 @@ module.exports = (args, cbk) => {
           try {
 
             let channel = await lnService.getChannel({ lnd: args.lnd, id: n.chanid })
-
+           
             for (let i in channel.policies) {
 
               //replace with fake policy
             
               if (!channel.policies[i].fee_rate) {
-              
-                channel.policies[i] = default_policy;
-                channel.policies[i].public_key = n.from_pubkey;
+                channel.policies[i].cltv_delta = 40;
+                channel.policies[i].fee_rate = 1;
+                channel.policies[i].base_fee_mtokens = '1000';
                 if(args.verbose){
-                  args.logger.info(`Inserted Fake-Policy for Channel for ${channel}`)
+                  args.logger.info("Inserted Fake-Policy for Channel:", channel)
                 }
                 break;
               }
@@ -301,7 +295,7 @@ module.exports = (args, cbk) => {
 
           }
         }
-
+        
         const height = (await lnService.getHeight({ lnd: args.lnd })).current_block_height;
         let amount_sats = 1;
         if (args.amountReblance === 'Channelcapacity/2') {

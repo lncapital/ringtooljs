@@ -1,6 +1,6 @@
 {
     "name": "ringtooljs",
-    "version": "1.0.7",
+    "version": "1.0.9",
     "description": "Tool for the Lightning Network and Node Management",
     "license": "MIT",
     "main": "index.js",
